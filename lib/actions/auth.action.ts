@@ -80,8 +80,6 @@ export async function signIn(params: SignInParams) {
 
     await setSessionCookie(idToken);
   } catch (error: any) {
-    console.log("");
-
     return {
       success: false,
       message: "Failed to log into account. Please try again.",
@@ -118,7 +116,7 @@ export async function getCurrentUser(): Promise<User | null> {
       id: userRecord.id,
     } as User;
   } catch (error) {
-    console.log(error);
+    error;
 
     // Invalid or expired session
     return null;
