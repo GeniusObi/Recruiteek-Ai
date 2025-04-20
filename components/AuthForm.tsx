@@ -89,7 +89,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
         toast.success("Signed in successfully.");
         router.push("/");
       }
-    } catch {
+    } catch (error: any) {
       toast.error(
         "Invalid credentials. Please input the correct details and try again"
       );
